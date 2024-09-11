@@ -6,6 +6,7 @@ def find_empty(puzzle):
         return r, c
   return None, None
 
+
 def is_valid(puzzle, num, row, col): 
   if num in puzzle[row]: 
     return False
@@ -25,7 +26,6 @@ def is_valid(puzzle, num, row, col):
   return True
 
 
-
 # solve the puzzle
 def solve(puzzle): 
   row, col = find_empty(puzzle)
@@ -41,7 +41,6 @@ def solve(puzzle):
 
       puzzle[row][col] = 0
   return False
-
 
 
 ##################################################
