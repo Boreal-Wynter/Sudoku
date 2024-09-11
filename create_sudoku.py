@@ -1,5 +1,7 @@
 import random
 
+import time ## remove later
+
 
 class Sudoku: 
   def __init__(self): 
@@ -62,13 +64,10 @@ class Sudoku:
     for num in range(1, 10): 
       if self.is_valid(num, row, col): 
         self.board[row][col] = num
-
         if self.solve_puzzle(): 
           return True
-
         self.board[row][col] = 0
     return False
-
 
 
 def main(): 

@@ -1,3 +1,15 @@
+# output matrix
+def print_sudoku(puzzle): 
+  for r in range(9): 
+    if r != 0 and r % 3 == 0: 
+        print("-------------------------")
+    for c in range(9):
+      if c != 0 and c % 3 == 0: 
+        print(" | ", end = ' ')
+      print(puzzle[r][c], end = ' ')
+    print()
+
+
 # find an empty grid cell
 def find_empty(puzzle): 
   for r in range(9): 
@@ -7,6 +19,7 @@ def find_empty(puzzle):
   return None, None
 
 
+# see if the number is valid 
 def is_valid(puzzle, num, row, col): 
   if num in puzzle[row]: 
     return False
@@ -45,21 +58,15 @@ def solve(puzzle):
 
 ##################################################
 puzzle = [
-          [5, 4, 7, 0, 0, 0, 0, 0, 0], 
-          [3, 6, 9, 0, 0, 0, 0, 0, 0], 
-          [1, 8, 2, 0, 0, 0, 0, 0, 0], 
-          [0, 0, 0, 9, 2, 3, 0, 0, 0], 
-          [0, 0, 0, 8, 1, 4, 0, 0, 0], 
-          [0, 0, 0, 6, 7, 5, 0, 0, 0], 
-          [0, 0, 0, 0, 0, 0, 3, 8, 6], 
-          [0, 0, 0, 0, 0, 0, 7, 1, 2], 
-          [0, 0, 0, 0, 0, 0, 4, 5, 9]]
+          [0, 9, 5, 0, 0, 7, 2, 0, 3], 
+          [0, 8, 0, 0, 0, 6, 9, 0, 0], 
+          [0, 0, 0, 0, 0, 0, 0, 0, 0], 
+          [0, 7, 6, 8, 0, 5, 0, 0, 0], 
+          [4, 0, 0, 0, 0, 0, 0, 0, 0], 
+          [0, 0, 2, 0, 4, 0, 0, 0, 0], 
+          [2, 0, 0, 0, 0, 1, 8, 0, 0], 
+          [3, 0, 0, 0, 8, 0, 0, 0, 0], 
+          [0, 0, 0, 0, 3, 0, 7, 0, 1]]
 
 solve(puzzle)
-
-# output matrix
-for r in range(9): 
-  for c in range(9):
-    print(puzzle[r][c], end = ' ')
-  print()
-
+print_sudoku(puzzle)
